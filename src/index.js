@@ -1,10 +1,8 @@
 const { books } = require('../data/library');
 
 // Requisito 1
-const fantasyOrScienceFiction = () => {
-  // escreva seu código aqui
-  return books.filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica');
-};
+const fantasyOrScienceFiction = () => books
+  .filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica');
 
 const oldBooksOrdered = (year) => {
   // escreva seu código aqui
@@ -12,9 +10,9 @@ const oldBooksOrdered = (year) => {
   return oldBooks.sort((a, b) => a.releaseYear - b.releaseYear);
 };
 
-const booksByAuthorBirthYear = (birthYear) => {
-  // escreva seu código aqui
-};
+const booksByAuthorBirthYear = (birthYear) => books
+  .filter((book) => book.author.birthYear === birthYear)
+  .map((book) => book.name);
 
 const fantasyOrScienceFictionAuthors = () => {
   // escreva seu código aqui
@@ -28,7 +26,7 @@ const authorWith3DotsOnName = () => {
   // escreva seu código aqui
 };
 
-console.log(oldBooksOrdered(2020))
+console.log(booksByAuthorBirthYear(1920));
 
 module.exports = {
   fantasyOrScienceFiction,
