@@ -14,9 +14,10 @@ const booksByAuthorBirthYear = (birthYear) => books
   .filter((book) => book.author.birthYear === birthYear)
   .map((book) => book.name);
 
-const fantasyOrScienceFictionAuthors = () => {
-  // escreva seu código aqui
-};
+const fantasyOrScienceFictionAuthors = () => books
+  .filter((book) => book.genre === 'Fantasia' || book.genre === 'Ficção Científica')
+  .map((book) => book.author.name)
+  .sort();
 
 const oldBooks = (year) => {
   // escreva seu código aqui
@@ -26,7 +27,7 @@ const authorWith3DotsOnName = () => {
   // escreva seu código aqui
 };
 
-console.log(booksByAuthorBirthYear(1920));
+console.log(fantasyOrScienceFictionAuthors());
 
 module.exports = {
   fantasyOrScienceFiction,
